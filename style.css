@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Poppins:wght@300;400;500;600;700&display=swap');
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+         }
+         body{
+            width: 100%;
+            height: 100vh;
+            background-image: url(iamge/pexels-mudassir-ali-2680270.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;            
+            /* overflow: none; */
+            overflow: none;
+            /* position: fixed;
+            top: 0; */
+         }
+         .container{
+            position: fixed;
+            top: 0;
+            overflow: none;
+         }
+        :root{
+            /* color */
+            --body-color: #E4E9F7;
+            --sidebar-color: #FFF;
+            --primary-color: #3f3697;
+            --primary-color-light: #F6F5FF;
+            --toggle-color: #DDD;
+            --text-color: #707070;
+            /* transition */
+            --tran-02: all 0.2s ease ;
+            --tran-03: all 0.3s ease ;
+            --tran-04: all 0.4s ease ;
+            --tran-05: all 0.5s ease ;
+        }
+        .sidebar{
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: var(--sidebar-color);
+            transition: var(--tran-03);
+            z-index: 1;
+            overflow: auto;
+            box-shadow: 0 0 10px;
+        }
+        .sidebar header{
+            color: var(--text-color);
+            font-size: 28px;
+            line-height: 70px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            user-select: none;            
+        }
+        .sidebar a{
+            display: block;
+            color: var(--text-color);
+            height: 65px;
+            width: 100%;
+            line-height: 65px;
+            padding-left: 30px;
+            border-bottom: 1px solid var(--text-color);
+            border-top: 1px solid black;
+            border-left: 5px solid transparent;
+            font-family: 'Open Sans',sans-serif ;
+            transition: var(--tran-05);
+            text-decoration: none;
+        }
+        a:hover{
+            border-left: 5px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .sidebar a i{
+            font-size: 23px;
+            margin-right: 16px;
+        }
+        .sidebar a span{
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        #check{
+            display: none;
+        }
+        label{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        label #btn, label #cancel{
+            position: absolute;
+            cursor: pointer;
+            /* left: 10px; */
+            background-color: transparent;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-size: 29px;
+            border-radius: 5px;
+            transition: var(--tran-03);
+        } 
+        label #cancel{
+            opacity: 0;
+            visibility: hidden;
+        }
+        #check:checked ~ label #btn{
+            margin-left: 300px;
+            opacity: 0;
+            visibility: hidden;
+        }
+        #check:checked ~ label #cancel{
+            margin-left: 290px;
+            opacity: 1;
+            visibility: visible;
+        }
+        #check:checked ~ .sidebar{
+            left: 0;
+        }
+        img{
+            width: 52px;
+            border-radius: 15px;
+            position: fixed;
+            right: 15px;
+        }
+        .input{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            left: 100px;
+            top: 150px;
+            gap: 10px;
+        }
+        .input input{
+            width: 300px;
+        }
+        #container_tabel{
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            flex-direction: column;
+            width: 100%;
+            height: 320px;
+            position: relative;
+            top: 180px;
+            left: 100px;
+            /* top: 50%; */
+            /* transform: translate(-50%,-50%); */
+        
+
+            /* background-color: white; */
+        }
+        #container_tabel div{
+            overflow: auto;
+        }
+        table{
+    text-align: center;
+    
+}
+#container_tabel span{
+    display: flex;
+   position: absolute;
+   /* top: 0px; */
+   bottom: 0;
+}
+#container_tabel span #total_Id{
+    display: flex;justify-content: flex-start;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    position: relative;
+    top: 80px;
+}
+#container_tabel span #total_amount{
+    margin: auto;
+    position: relative;
+    top: 90px;
+    left: 30vw;
+    text-align: center;
+    /* right: 40px; */
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+}
+table tr>th{
+    background: rgb(231, 231, 231);
+    width: 5%;font-size: 20px;height: 30px;
+    position: sticky;
+    top: 0;
+}
+table tr td{
+    border:3px double grey;
+}
+.editd {
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    margin-right: 6px;
+}
+.editd:active{
+    color: rgb(48, 139, 236);
+}
+.deleteed{
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    margin-left: 6px;
+}
+.deleteed:active{
+    color: rgb(236, 45, 45);
+}
+#popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 320px;
+    height: 300px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 8px;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+}
+#popup h4{
+    position: relative;
+    top: 25px;
+}
+#popup input{
+    position: relative;
+    top: 17%;
+    width: 250px;
+}
+#popup button{
+    background: #0074ff ;
+    color:white;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    text-transform: capitalize; 
+    padding: 3px;
+    margin: auto;
+    position: relative;
+    top: 20px;
+    border:none ;
+    outline: none;
+}
+.profile{
+    width: 310px;
+    height: 270px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px;
+    border: 2px solid black;
+    position: relative;
+    bottom: 150px;
+    left: 100px;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    display: none;
+}
+.profile #closeModulas{
+    position: relative;
+    /* right: 85px; */
+    /* bottom: 40px; */
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.profile #closeModulas:hover{
+    text-decoration: underline;
+}
+.profile h3{
+    text-align: center;
+    position: relative;
+    top: 20px;
+    /* bottom: 20px; */
+}
+.profile .contant{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 35vh;
+}
+@media (max-width: 767px){
+    body{
+        overflow: none;
+    }
+    label{
+        position: relative;
+        top: 20px;
+        left: auto;
+        right: auto;
+        font-size: 30px;
+        margin: auto;
+    }
+    label img{
+        width: 27px;
+    }
+    label #btn, label #cancel{
+        position: fixed;
+        font-size: 28px;
+    }
+    .input{
+        flex-wrap: wrap;
+        position: relative;
+        top: 100px;
+        left: 0;
+    }
+    .input input{
+        width: 200px !important;
+    }
+    .input button{
+        position: relative;
+        left: 30px;
+    }
+    #container_tabel{
+        width: auto;
+        position: absolute;
+        display: flex;
+
+        top: 240px;
+        width: 99%;height: 280px !important;
+        left: 0px !important;
+        /* right: 500px !important; */
+    }
+    #container_tabel div{
+        overflow: auto;
+    }
+    #container_tabel span{
+        position: fixed;
+       bottom: 90px;
+    }
+    .table{
+        position: relative;
+    }
+    .mainTabel{
+        position: relative;
+        top: 30px;
+    }
+    #popup h4{
+        font-size: 26px;
+    }
+    #total_Id{
+        position: relative;
+        top: 100px;
+        color: black;
+        /* height: 300px; */
+        /* top:300px ; */
+        /* bottom: 100px !important; */
+    }
+    #total_amount{
+        display: none;
+    }
+    .sidebar{
+        width: 220px;
+        height: 100vh;
+    }
+    .sidebar a{
+        display: block;
+        color: var(--text-color);
+        height: 65px;
+        width: 100%;
+        line-height: 60px;
+        padding-left: 30px;
+        border-bottom: 1px solid var(--text-color);
+        border-top: 1px solid black;
+        border-left: 5px solid transparent;
+        font-family: 'Open Sans',sans-serif ;
+        transition: var(--tran-05);
+        text-decoration: none;
+    }
+    a:hover{
+        border-left: 5px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+    .sidebar a i{
+        font-size: 19px;
+        margin-right: 13px;
+    }
+    #check:checked ~ label #btn{
+        margin-left: 260px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    #check:checked ~ label #cancel{
+        margin-left: 210px;
+        opacity: 1;
+        visibility: visible;
+    }
+    .profile{
+        position: fixed;
+        left: 0;
+        right:0;
+        bottom: 250px;
+    }
+}

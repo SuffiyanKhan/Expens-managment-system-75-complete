@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Email</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-image: url(iamge/pexels-mudassir-ali-2680270.jpg);
+            background-size: cover;
+            background-position: center;
+            /* position: fixed; */
+        }
+        .forgot{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            height: 70vh;
+        }
+        .forgot div{
+            width: 600px;
+            height: 180px;
+            background-color: white;
+            border: none;
+            border-radius: 20px;
+        }
+        .forgot div h1{
+            position: relative;
+            top: 20px;
+            text-align: center;
+            font-weight: 650;
+        }
+        .forgot div input{
+            margin: auto;
+            position: relative;
+            top: 30px;
+            width: 90%;
+        }
+        .forgot div button{
+            position: relative;
+            left: 15vw;
+        }
+        a{
+            /* margin: 15px 30px; */
+            position: relative;
+            left: 40px;
+            top: 50px;
+            font-size: 30px;
+            /* margin: 20px; */
+            text-decoration: none;
+            color: white;
+            border-left: none;
+        }
+        a i:active{
+            color: rgb(44, 44, 176);
+            border-left: none;
+        }
+        .contan{
+                /* display: none; */
+            }
+            p{
+                text-align: center;
+                position: relative;
+                top: 40px;
+                font-size: 30px;
+                display: none;
+            }
+        @media (max-width:500px) {
+            .forgot{
+                height: 90vh;
+            }
+            .forgot div{
+                width: 99%;
+                height: 30vh;
+            }
+            .forgot div button{
+                position: relative;
+                top: 20px;
+                left: 28vw;
+            }
+            .contan{
+                display: none;
+            }
+            p{
+            text-align: center;
+            position: relative;
+            top: 40px;
+            font-size: 28px;
+            font-weight: 600;
+            }
+            a i:active{
+            color: rgb(44, 44, 176);
+            border-left: none;
+        }
+        }
+    </style>
+</head>
+<body>
+    <a href="./login.html"><i class="fa-solid fa-arrow-left"></i>Back</a>
+    <div class="forgot" type="form">
+        <div>
+            <h1>Change Password</h1>
+            <div class="contan">
+                <input class="inp form-control" id="forgot_email" placeholder="Enter Email" type="email"><br><br>
+                <button type="submit"  class="btn btn-success" id="sent_email">Change Password</button>
+            </div>
+            <p id="para">Check your Email and change password</p>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="module" src="forgot.js"></script>
+</body>
+</html>

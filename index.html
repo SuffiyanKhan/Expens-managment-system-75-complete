@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    <title>Expense managment system</title>
+    <style>
+        header{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <img src="iamge/channels4_profile.jpg" alt="">
+        <div class="sidebar">
+            <header>My menu</header>
+            <a id="profile" href="#"> <i class="fas fa-user"></i><span>Your Profile</span></a>
+            <a href="#"> <i class="fas fa-qrcode"></i><span>Dashboard</span></a>
+            <a href="#"> <i class="fas fa-link"></i><span>Shortcuts</span></a>
+            <a href="#"> <i class="fas fa-stream"></i><span>Overview</span></a>
+            <a href="#"> <i class="fas fa-calendar"></i><span>Events</span></a>
+            <a href="#"> <i class="fas fa-question-circle"></i><span>About</span></a>
+            <a href="#"> <i class="fas fa-sliders-h"></i><span>Services</span></a>
+            <a href="#"> <i class="fas fa-envelope"></i><span>Contant</span></a>
+            <a id="log_out" href="#"> <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></a>
+        </div>
+        <!-- <header><h2 id="header">welcome to user,</h2></header> -->
+        <div class="input">
+            <input class="form-control mb-2" type="text" name="" id="text">
+            <input class="form-control mb-2" type="number" name="" id="amount">
+            <input class="form-control mb-2" type="date" name="" id="date">
+            <button id="addExpense" class="btn btn-success mb-2">Add</button>
+        </div>
+        <div id="container_tabel">
+            <div  class="mainTabel">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="newTable">
+                        
+                    </tbody>
+                    
+                </table>
+            </div>
+            <!-- hidden popup -->
+            <div id="popup">
+                <h4>Update</h4>
+                <input class="form-control mb-2" type="text" name="" id="utext">
+                <input class="form-control mb-2" type="number" name="" id="uammount">
+                <input class="form-control mb-2" type="date" name="" id="udate">
+                <button id="update"><i class="fa-solid fa-floppy-disk"></i>update</button>
+                
+            </div>
+            <span>
+                <p id="total_Id">Total :</p>
+                <p id="total_amount">Total Amount :</p>
+            </span>
+        </div>
+        <div class="profile">
+            <p id="closeModulas"> <i class="fa-solid fa-arrow-left"></i> Go to Back</p>
+            <h3>Your Profile</h3>
+            <div class="contant">
+                <p id="name"></p>
+                <p id="email">NaN</p>
+            </div>
+        </div>
+    </div>
+   <script src="app.js"></script>
+   <script type="module" src="welcom.js"></script>
+   <!-- <script type="module" src="signup.js"></script> -->
+</body>
+</html>
